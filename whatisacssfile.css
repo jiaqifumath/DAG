@@ -1,0 +1,78 @@
+a{
+	text-decoration: none;
+}
+
+a:link {
+  color: red;
+}
+
+/* visited link */
+a:visited {
+  color: green;
+}
+
+/* mouse over link */
+a:hover {
+  color: hotpink;
+}
+
+/* selected link */
+a:active {
+  color: blue;
+}
+
+
+
+
+header{
+	margin:60px;
+}
+
+div.contact-menu{
+	float: right;
+	width:300px;
+	margin-left:50px;
+	margin-right:20px;
+}
+
+div.intro{
+	width:1000px;
+	margin:50px;
+	
+}
+
+div.writing{
+	width:1000px;
+	margin:50px;
+	
+}
+
+div.teaching{
+	width:1000px;
+	margin:50px;
+	
+}
+
+div.activities{
+	width:1000px;
+	margin:50px;
+	
+}
+
+details > summary {
+list-style:none;
+
+}
+
+details > p {
+	background-color: #eff3f1;
+	}
+	
+summary:hover{ 
+background: #eff3f1;
+cursor: pointer;
+}
+
+ul{
+	line-height:2;
+}
