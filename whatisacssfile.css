@@ -71,5 +71,6 @@ cursor: pointer;
 
 ul{
 	line-height:2;
-
+	list-style: none;
 }
+
