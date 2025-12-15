@@ -1,1 +1,125 @@
+/* -----------------------------
+   0) 全局：更稳定的排版基础
+-------------------------------- */
+* { box-sizing: border-box; }
+
+body{
+  margin: 0;
+  font-family: Arial, sans-serif;   /* Lukas 的风格：简单干净 */
+  color: #000;
+}
+
+/* -----------------------------
+   1) 统一版心：像 LaTeX 一样“有版芯”
+   - max-width 而不是 width:1000px
+   - margin: auto 让内容居中
+-------------------------------- */
+header{
+  max-width: 1050px;
+  margin: 60px auto 20px auto;
+  padding: 0 20px;
+}
+
+div.text{
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  /* 关键：让 float 的 contact-menu 不把父容器高度弄崩，
+     同时让正文排版更稳（类似 clearfix） */
+  overflow: hidden;
+}
+
+/* -----------------------------
+   2) 右侧 contact-menu：保持你现在的“右栏”设计，但更协调
+-------------------------------- */
+div.contact-menu{
+  float: right;
+  width: 300px;
+  margin: 20px 0 20px 40px;  /* 左边留空给正文 */
+}
+
+/* 图片不要撑破布局（你已经写了 max-width:100% 很好，这里更稳） */
+div.contact-menu img{
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* -----------------------------
+   3) 让你的四个主块统一：intro / writing / teaching / activities
+   - 去掉固定 width:1000px
+   - 用一致的外边距和可读的行宽策略
+-------------------------------- */
+div.intro,
+div.writing,
+div.teaching,
+div.activities{
+  margin: 50px 0;          /* 垂直留白交给 block 自己；左右由 .text 控制 */
+}
+
+/* -----------------------------
+   4) 关键：段落“像 LaTeX 一样协调”
+   - 控制每行字数（ch 单位）
+   - 两端对齐 + 自动断词（避免右边参差不齐）
+-------------------------------- */
+div.text p{
+  max-width: 75ch;         /* LaTeX 感的核心：限制行长 */
+  line-height: 1.55;
+  text-align: justify;
+  hyphens: auto;
+  text-justify: inter-word;
+
+  margin: 0 0 0.9em 0;
+}
+
+/* 如果某些段落你希望用满宽度，可以给它 class="full"
+   （不强制你改 HTML，只是提供一个出口） */
+div.text p.full{ max-width: none; }
+
+/* -----------------------------
+   5) 你的 details/summary：保留你的交互风格，补一点“块感”
+-------------------------------- */
+details > summary{
+  list-style: none;
+  cursor: pointer;
+  padding: 6px 8px;
+  border-radius: 6px;
+}
+
+summary:hover{
+  background: #eff3f1;
+}
+
+/* 你原来写的是 details > p，但你的结构是 details 里面包 p
+   所以用 details p 更保险 */
+details p{
+  background-color: #eff3f1;
+  padding: 10px 12px;
+  border-radius: 8px;
+  margin: 8px 0 0 0;
+}
+
+/* -----------------------------
+   6) 列表行距：你原来 ul { line-height:2; } 太松，像 PPT
+   建议略收紧一点，接近 LaTeX 阅读节奏
+-------------------------------- */
+ul{ line-height: 1.6; }
+
+/* -----------------------------
+   7) 移动端：右侧栏自动下移，避免挤压/溢出
+-------------------------------- */
+@media (max-width: 900px){
+  div.contact-menu{
+    float: none;
+    width: min(320px, 100%);
+    margin: 20px 0;
+  }
+
+  div.text p{
+    max-width: none;
+    text-align: left; /* 手机上 justify 容易出现大空格，左对齐更自然 */
+    hyphens: auto;
+  }
+}
 
