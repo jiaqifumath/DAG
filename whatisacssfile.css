@@ -25,7 +25,9 @@ a:active {
 
 
 header{
-	margin:60px;
+  max-width: 1000px;
+  margin: 60px auto 20px auto;
+  padding: 0 20px;
 }
 
 div.contact-menu{
@@ -35,34 +37,28 @@ div.contact-menu{
 	margin-right:20px;
 }
 
-div.intro{
-	width:1000px;
-	margin:50px;
-	
-}
-
-div.writing{
-	width:1000px;
-	margin:50px;
-	
-}
-
-div.teaching{
-	width:1000px;
-	margin:50px;
-	
-}
-
+div.intro,
+div.writing,
+div.teaching,
 div.activities{
-	width:1000px;
-	margin:50px;
-	
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 0 20px;
 }
+div.text p{
+  max-width: 70ch;
+  text-align: justify;
+  hyphens: auto;
+  line-height: 1.55;
+}
+
 
 details > summary {
 list-style:none;
 
 }
+
+
 
 details > p {
 	background-color: #eff3f1;
@@ -75,4 +71,5 @@ cursor: pointer;
 
 ul{
 	line-height:2;
+
 }
