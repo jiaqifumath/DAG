@@ -4,9 +4,10 @@
 * { box-sizing: border-box; }
 
 body{
-  margin: 0;
-  font-family: Arial, sans-serif;   /* Lukas 的风格：简单干净 */
-  color: #000;
+   margin: 0;
+   font-family: Arial, sans-serif;
+   font-size: 16.5px;
+   color: #000;
 }
 
 /* -----------------------------
@@ -86,13 +87,6 @@ details > summary{
   padding: 6px 8px;
   border-radius: 6px;
 }
-
-summary:hover{
-  background: #eff3f1;
-}
-
-/* 你原来写的是 details > p，但你的结构是 details 里面包 p
-   所以用 details p 更保险 */
 details p{
   background-color: #eff3f1;
   padding: 10px 12px;
@@ -123,3 +117,25 @@ ul{ line-height: 1.6; }
   }
 }
 
+a{
+	text-decoration: none;
+}
+
+a:link {
+  color: red;
+}
+
+/* visited link */
+a:visited {
+  color: green;
+}
+
+/* mouse over link */
+a:hover {
+  color: hotpink;
+}
+
+/* selected link */
+a:active {
+  color: blue;
+}
